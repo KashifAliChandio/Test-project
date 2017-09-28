@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    // // function with Default Parameter Values
+
+    // function makeRequest(url,timeout, callback){
+    //     timeout = timeout || 2000;
+    //     callback = callback || function(){};
+    //     console.log(timeout);
+    //     console.log(callback);
+    // }
+
+    // makeRequest("http:\\www.google.com", 3000, 2);
+
+    // function makeRequest(url,timeout,callback){
+    //     timeout = (typeof timeout !== undefined) ? timeout: 2000;
+    //     callback = (typeof callback !== "undefined") ? callback : function(){};
+    //     console.log(timeout);
+    //     console.log(callback);
+    // }
+    // makeRequest("http:\\www.google.com", 4000, 4)
+
+    // makeRequest("/foo");
+    // makeRequest("/foo",500);
+    // makeRequest("/foo",500, function(body){
+    //     alert(body);
+    // })
+
+    // in es6 we can write this function in this way
+
+    // function makeRequest(url,timeout = 200, callback){
+    //     console.log(url);
+    //     console.log(timeout);
+    //     console.log(callback);
+    // }
+    // makeRequest("/foo")
+
+// simple function to check how default value effect the arguments object
+
+// function mixArgs(first,second){
+//     "use strict";
+//     console.log(first === arguments[0]);
+//     console.log(second === arguments[1]);
+//     first = "c"
+//     second = "d"
+//     console.log(first === arguments[0]);
+//     console.log(second === arguments[1]);
+// }
+// mixArgs("a","b");
+
+// function mixArgs(first,second = "b"){
+    
+//     console.log(first === arguments[0]);
+//     console.log(second === arguments[1]);
+//     first = "c"
+//     second = "d"
+//     console.log(first === arguments[0]);
+//     console.log(second === arguments[1]);
+// }
+// mixArgs("a");
+
+// function getvalue(){
+//     return 5;
+// }
+// function add(first, second = getvalue()){
+//     return first + second;
+// }
+// console.log(add(2));
+// console.log(add(4,4))
+
+//  function getvalue(value){
+//      return value + 5;
+//  }
+//  function add(first, second = getvalue(first)){
+//     return first + second
+//  }
+//  console.log(add(3));
+    </script>
+</body>
+</html>

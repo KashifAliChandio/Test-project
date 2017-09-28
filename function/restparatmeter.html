@@ -1,0 +1,93 @@
+(<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rest parameter in book</h1>
+
+    <script>
+    // function pick(object,...key){
+    //     let result = Object.create(null);
+    //     console.log(result);
+
+    //     for(let i =0, len = key.length; i<len; i++){
+    //         result[key[i]] = object[key[i]];
+    //         console.log(result);
+    //     }
+    //     return result;
+    // }
+
+
+    // console.log(pick(22,33,44,55))
+
+    // testing
+
+let harami = [22,33,4,4,22,33,55,55];
+console.log(Math.max.apply(Math,harami))
+console.log(Math.max(...harami));
+
+let check = [-22,-33,-33,-2,-1];
+console.log(Math.max(...check));
+
+function chandio(){
+    //chotiya banaya
+};
+
+
+
+var ch = function(){};
+console.log(ch.name);
+function doSomething() {
+// empty
+}
+var doAnotherThing = function() {
+// empty
+};
+console.log(doSomething.name); // "doSomething"
+console.log(doAnotherThing.name);
+
+var he = function(){};
+console.log(he.bind.name);
+console.log((new Function()).name);
+
+// function Person(name){
+//     if ( this instanceof Person){
+//     this.name = name;
+//     }
+//     else{
+//         throw new Error("You Most use new")
+//     }
+// }
+// var p1 = new Person("Kashif");
+// console.log(p1);
+
+// var p2 = Person.call(p1,"Chandio");
+
+// console.log(p2);
+
+// new Target Metatproperly
+
+function Person(name){
+    if(typeof new.target !== "undefined"){
+        this.name = name;
+    }
+    else {
+        throw new Error ("You Must use new With Person");
+    }
+}
+var person = new Person("Kashif");
+console.log(person);
+
+var motPerson = Person.call(person,"Chandio");
+
+console.log(notPerson);
+
+
+
+    </script>
+</body>
+</html>

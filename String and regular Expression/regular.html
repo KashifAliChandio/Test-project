@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>String and regular Expression</h1>
+
+    <script>
+        // let text = "𠮷";
+        // console.log(text.length); // 2
+        // console.log(/^.$/.test(text)); // false
+        // console.log(text.charAt(0)); // ""
+        // console.log(text.charAt(1)); // ""
+        // console.log(text.charCodeAt(0)); // 55362
+        // console.log(text.charCodeAt(1)); // 57271
+
+        let alphaTest = "Chandio";
+
+        console.log(alphaTest.length);
+        console.log(/^.$/.test(alphaTest));
+        console.log(alphaTest.charAt(0));
+        console.log(alphaTest.charAt(1));
+        // for(var i =0 ; i<alphaTest.length; i++){
+        //         console.log(alphaTest.charAt(i));
+        // }
+
+        for (let i = 0; i < alphaTest.length; i++) {
+            console.log(alphaTest.charCodeAt(i));
+        }
+
+        for (let i = 0; i < alphaTest.length; i++) {
+           
+            console.log(alphaTest.codePointAt(i));
+             function is32Bit(alphaTest) {
+                return console.log(alphaTest.codePointAt(i) > 0xFFFF);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrow Function</h1>
+
+    <script>
+    let reflect = value => value;
+    console.log(reflect);
+    
+    let reflecw = function(value){
+        return value;
+    }
+
+    console.log(reflecw);
+
+// let sum = (num1, num2) => num1 + num2;
+// console.log(sum(1,3));
+
+let sum1 = function(num1 ,num2){
+    return num1 + num2;
+}
+
+console.log(sum1(1,2));
+
+let getName = (name) => name;
+console.log(getName("Kashif"));
+
+let getName1 = function() {
+    return "Chandio";
+}
+
+console.log(getName1());
+
+let sim = (sum1,sum2) => {
+    return sum1 + sum2;
+}
+console.log(sim(33,44))
+
+let donNothing = () => {};
+
+console.log(donNothing);
+
+let getTempItem = id => ({
+    id: id, name : "Temp"
+});
+
+// let getTempItem = function(id){
+//     return{
+//         id: id,
+//         name: "Temp"
+//     };
+// };
+
+console.log(getTempItem);
+
+// let person = function(name){
+//     return {
+//         getName: function() {
+//             return name;
+//         }
+//     };
+// }("Kashif");
+// console.log(person.getName());
+
+let person = ((name) =>{
+return{
+    getName : function() {
+        return name;
+    }
+}
+})("KAshif");
+
+console.log(person.getName());
+
+// Arrow Function and Arrays
+var values = [33,44,55,66,7];
+var result = values.sort((a, b) => a - b);
+console.log(result);
+
+function createArrowFunctionReturningFirstArg(){
+    return () => arguments[0];
+}
+
+var arrowFunction = createArrowFunctionReturningFirstArg(5);
+console.log(arrowFunction());
+
+var comparator = (a,b) => a - b;
+console.log(typeof comparator);
+console.log(comparator instanceof Function);
+// apply and binding in arrow Function
+
+var sum = (num1, num2) => num1+ num2;
+console.log(sum.call(null, 1,2));
+console.log(sum.apply(null, [1,2]));
+
+var boundSum = sum.bind(null,1,2);
+console.log(boundSum());
+
+//Tail Call Optimization
+function domyThingalso(){
+    return 23;
+}
+
+function domyThing() {
+    return domyThingalso();
+}
+console.log(domyThing());
+
+function dohe() {
+    var num = 1;
+    var fun = () => num;
+
+    return fun();
+}
+
+console.log(dohe());
+
+function factorial (n, p = 1){
+    if (n <= 1){
+        return 1 * p;
+    } else {
+    let result = n * p; 
+    }
+    return factorial( n - 1, result);
+}
+
+console.log(factorial(3, 5))
+
+    </script>
+
+
+</body>
+</html>

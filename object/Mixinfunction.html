@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+function mixin(receiver, supplier) {
+Object.keys(supplier).forEach(function(key) {
+receiver[key] = supplier[key];
+});
+return receiver;
+}
+    
+// function EventTarget() { /*...*/ }
+// EventTarget.prototype = {
+// constructor: EventTarget,
+// emit: function() { /*...*/ },
+// on: function() { /*...*/ }
+// };
+// var myObject = {};
+// mixin(myObject, EventTarget.prototype);
+// console.log(myObject.emit("somethingChanged"));
+
+
+function EventTarget() { /*...*/ }
+EventTarget.prototype = {
+constructor: EventTarget,
+emit: function() { /*...*/ },
+on: function() { /*...*/ }
+}
+var myObject = {}
+Object.assign(myObject, EventTarget.prototype);
+console.log(myObject.emit("somethingChanged"));
+
+//how to assign the value in object by passing object.assign value;
+
+var myCheck = {};
+
+Object.assign(myCheck,{
+    type: "js",
+    name: "file.js"
+}, {
+    type: "css"
+})
+console.log(myCheck);
+console.log(myCheck.name)
+
+console.log(myCheck.type);
+console.log(myCheck.type);
+
+// this an other method to assign the variable in  Object
+var receiver = {};
+supplier = {
+    get name() {
+        return "file.js"
+    }
+};
+
+Object.assign(receiver, supplier);
+
+console.log(receiver.name);
+ // and third method is Object. getOwnProperty Descriptor ( receiver, "Name");
+
+var descriptor = Object.getOwnPropertyDescriptor(receiver, "name");
+
+console.log(descriptor.value);
+console.log(descriptor.get);  // it is undefined
+//  console.log(des)
+
+var myvl = {};
+Object.assign(myvl,{
+    name: "Chandio",
+    test: "Test is working"
+});
+
+console.log(myvl);
+
+var ok = {};
+
+var me = {
+    name: "Chandio",
+    caste: "Marfani"
+}
+
+Object.assign(ok, me);
+
+
+console.log(ok)
+
+    </script>
+</body>
+</html>

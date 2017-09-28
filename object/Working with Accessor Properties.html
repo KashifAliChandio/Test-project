@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Working with accessor Properties</h1>
+
+    <script>
+    
+//     var receiver = {},
+//     supplier = {
+//         get name () {
+//             return "file.js"
+//         },
+
+
+//     } ;
+
+//     Object.assign(receiver, supplier);
+
+//     var descriptor = Object.getOwnPropertyDescriptor(receiver, "name");
+
+//     console.log(descriptor.value);
+
+//     console.log(descriptor.get);
+
+// var check = {};
+
+// checker = {
+//     get name () {
+//         return "Check this value";
+//     },
+
+//     heh: "How r u",
+// }
+// Object.assign(check, checker);
+// var prop = Object.getOwnPropertyDescriptor(check, "name");
+// console.log(prop.value);
+// console.log(prop.get);
+
+
+// checking emit ( ) property in es6
+
+
+// function EventTarget() {
+//     // 
+
+//     console.log("Function is working Correctly");
+// }
+
+// EventTarget.prototype = {
+//     constructor : EventTarget,
+//     emit(value) {
+//         //
+//         return value;
+//     }, 
+//     on(value) {
+//         //
+//         return value
+//     }
+// }
+// var myObject = {};
+// Object.assign(myObject, EventTarget.prototype);
+// myObject.emit("Chandio");
+// myObject.on("Kashif")
+// console.log(myObject.value);
+// console.log(myObject.size);
+// console.log(
+//     EventTarget
+// );
+
+// Own Property Enumeration Order
+
+// var obj = {
+// a: 1,
+// 0: 1,
+// c: 1,
+// 2: 1,
+// b: 1,
+// 1: 1
+// };
+// obj.d = 1;
+// console.log(Object.getOwnPropertyNames(obj)) // this will display only rendering object
+// console.log(Object.getOwnPropertyNames(obj).join("")); // this property will joing the object property not object value
+
+let person = {
+    getGreeting() {
+        return "Hello";
+    }
+};
+let dog = {
+    getGreeting() {
+        return "Woof"
+    }
+};
+// let friend = Object.create(person);
+// console.log(friend);
+
+// console.log(Object.getPrototypeOf(friend) === person);
+
+// let hello = Object.create(null);
+
+// console.log(hello);
+
+
+//Easy Prototype Access with Super References
+
+let friend = {
+    getGreeting() {
+        return Object.getPrototypeOf(this).getGreeting.call(this)
+    }
+}
+console.log(friend)
+
+</script>
+</body>
+</html>

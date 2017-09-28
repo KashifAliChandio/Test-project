@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+//     "use strict";
+
+//         var person = {
+//             name: "Chandio",
+//             name: "Taimoor"
+//         }
+
+//         console.log(person);
+
+//         var obj = {
+//             a : 0,
+//             o:0,
+//             c:1,
+//             2:1,
+//             b:1,
+//             1:1,
+//         };
+//         obj.d = 1;
+//         console.log(obj);
+
+//         console.log(Object.getOwnPropertyNames(obj).join(""));
+
+//         console.log(obj);
+
+// var cha = {
+//     name1: "KAshif",
+//     name2: "chandio",
+//     name3: "hamza",
+// }
+// console.log(Object.getOwnPropertyNames(cha).join(" "));
+
+
+// let person = {
+//     getGreeting() {
+//         return "Hello";
+//     }
+// };
+
+// let dog = {
+//     getGreeting() {
+//         return "woof";
+//     }
+// };
+
+// let friend = Object.create(person);
+
+// console.log(friend);
+// console.log(friend.getGreeting());
+
+// console.log(Object.getPrototypeOf(friend) === person);
+
+// Object.setPrototypeOf(friend, dog);
+// console.log(friend.getGreeting());
+// console.log(Object.getPrototypeOf(friend) === dog);
+
+// console.log("Friend ------- "+friend)
+
+let person = {
+    getGreeting() {
+        return "hello";
+    }
+};
+
+let dog = {
+    getGreeting() {
+        return "woof";
+    }
+};
+
+let friend= {
+    getGreeting() {
+        return Object.getPrototypeOf(this).getGreeting.call(this) + ", hi! ";
+    }
+}
+// set Prototype to person
+
+Object.setPrototypeOf(friend, person);
+
+
+console.log(person.getGreeting());
+
+console.log(friend.getGreeting());
+
+// set Protoype to Person
+
+// set prototype to dog
+Object.setPrototypeOf(friend, dog);
+console.log(friend.getGreeting()); // "Woof, hi!"
+console.log(Object.getPrototypeOf(friend) === dog);
+
+    </script>
+</body>
+</html>

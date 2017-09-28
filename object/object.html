@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object Literical or Json</h1>
+
+    <script>
+    // function createPerson(name, age){
+    //     return{
+    //         name: name,
+    //         age: age,
+    //     };
+    // }
+
+    // console.log(typeof createPerson);
+
+    // console.log(createPerson("KAshif", 23));
+    // the altenate way of writing this code is
+
+    // function createPerson(name, age){
+    //     return{
+    //         name,
+    //         age
+    //     };
+    // }
+   // console.log(createPerson("Chandio", 23));
+
+// in ECMA Script 5
+    // var person = {
+    //     name: "Chandio",
+    //     sayName : function(){
+    //         console.log(this.name);
+    //     }
+    // }
+
+//console.log(person.name);
+
+// this method is caled concise
+// var person = {
+//     name: "Marfani",
+//     sayName() {
+//         console.log(this.name);
+//     }
+// }
+
+// console.log(person.name);
+
+// in es6 we can do object like this
+// let lastName = "Chandio";
+
+// let person = {
+//     "first Name" : "Kashif",
+//     lastName: "Marfani"
+// }
+// console.log(person["first Name"]);
+// console.log(person["lastName"]);
+
+// // pr we can also write this
+
+// let suffix = " Name";
+// let person1 = {
+//     ["first" + suffix] : "Kashif Ali",
+//     ["last" + suffix] : "chandio 1"
+// }
+// console.log(person1["first Name"]);
+// console.log(person1["last Name"]);
+
+// Object is Method in ES6
+
+console.log(5 === 5);
+console.log(+0 === -0);
+console.log("By using Object is method");
+
+// in this case Object.is work has === work
+
+console.log(Object.is( -0 , +0));
+
+console.log(NaN === NaN);
+console.log(NaN == NaN);
+console.log("By using Object is method");
+
+console.log(Object.is( NaN,NaN));
+
+
+function mixin(rec ,sup){
+    Object.keys(sup).forEach(function(key){
+        rec[key] = sup[key]
+    });
+
+    return rec;
+}
+console.log( mixin(5,6));
+    </script>
+</body>
+</html>

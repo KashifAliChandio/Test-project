@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    // literal make working with collection of data very easy
+    //The Literal has a key to afficent data key
+    // when we iterate something kep in for loop
+// iterater are made to solve all of these problem which occurs in for loop
+// literater are no thing except object they have next object and they give next item and give u result object with value and done propert 
+
+   
+   // this is es5
+    let colors = ['red','green','blue'];
+    for(let i = 0; i < colors.length; i++){
+        console.log(colors[i]);
+       
+    }
+
+   
+function createIterator(item){
+
+    var i = 0;
+        return {
+          next: function(){
+              var done = (i >= item.length);
+              var value = item ? item[i++] : undefined;
+
+              return {
+                  done: done,
+                  value: value
+              };
+          }  
+        }
+}
+var iterator = createIterator([1,2,3]);
+
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+ 
+ 
+ // generator return becuase ot this logic
+ //generator are function which return iterature they have * key word
+
+ function *myNewIterator() {
+yield 1;
+yield 2;
+yield 3;
+yield 4;
+ }
+
+ var itera = myNewIterator();
+ console.log(itera.next());
+ console.log(itera.next());
+ console.log(itera.next());
+ console.log(itera.next());
+ console.log(itera.next());
+
+ // they have asynors power
+
+ //use in loop
+ function *myFunction (item) {
+     for(let i = 0; i < item.length; i++){
+         yield item[i];
+     }
+ }
+
+let iter = myFunction([1,2,3]);
+
+console.log(iter.next());
+ console.log(iter.next());
+ console.log(iter.next());
+ console.log(iter.next());
+ console.log(iter.next());
+// creator function donot ru  yield into otther function
+
+
+    </script>
+</body>
+</html>

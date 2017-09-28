@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object protoType</h1>
+
+    <script>
+    
+    let person = {
+        getGreeting() {
+            return "Hello";
+        }
+    };
+
+    let dog = {
+        getGreeting() {
+            return "woof";
+        }
+    };
+// prototype is person
+
+let friend = Object.create(person);
+console.log(friend);
+console.log(friend.getGreeting());
+
+    </script>
+</body>
+</html>
